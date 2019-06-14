@@ -1,4 +1,57 @@
 import React, { Component } from 'react';
+import styled from 'styled-components';
+
+const StylesSmurfForm = styled.div`
+    transform: translateX(-5%);
+    display: flex;
+    justify-content: center;
+    width: 600px;
+    margin: 0 auto;
+
+    form {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    input {
+      width: 190px;
+      height: 25px;
+      border: 2px solid #1F85C7;
+      margin-bottom: 10px;
+      text-align: center;
+      outline: none;
+      font-size: 1.1rem;
+
+      &:first-child {
+        border-bottom-left-radius: 10px;
+        border-right: 2px solid dodgerblue;
+      }
+
+      &:nth-child(3) {
+        border-bottom-right-radius: 10px;
+        border-left: 2px solid dodgerblue;
+      }
+
+      &:invalid {
+        border: 2px solid green;
+      }
+    }
+
+    button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 230px;
+      height: 40px;
+      border: 3px solid #1F85C7;
+      border-radius: 20px;
+      padding: 8px 0;
+      font-size: 1.1rem;
+    }
+
+
+`;
 
 class SmurfForm extends Component {
   constructor(props) {
@@ -33,7 +86,7 @@ class SmurfForm extends Component {
 
   render() {
     return (
-      <div>
+      <StylesSmurfForm>
         <form onSubmit={this.addSmurf}>
           <input
             type="text"
@@ -62,7 +115,7 @@ class SmurfForm extends Component {
           />
           <button type="submit">{this.props.btnText}</button>
         </form>
-      </div>
+      </StylesSmurfForm>
     );
   }
 }
