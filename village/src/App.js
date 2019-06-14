@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 import './App.css';
 import SmurfForm from './components/SmurfForm';
@@ -9,8 +10,28 @@ class App extends Component {
     super(props);
     this.state = {
       smurfs: [],
+      errorMessage: '',
+      loading: false,
     };
   }
+
+  componentDidMount() {
+    this.setState({ loading: true });
+    this.getRequestHandler();
+
+    console.log(this.state.smurfs);
+    console.log(this.state.errorMessage);
+  }
+
+  getRequestHandler = () => {
+    axios.get(smurfsAPI)
+      .then(response => {
+        this.setState({ smurfs: response.data })
+      })
+      .catch(reject => {
+        this.setState({ errorMessage: reject.message })
+      })
+  } 
   // add any needed code to ensure that the smurfs collection exists on state and it has data coming from the server
   // Notice what your map function is looping over and returning inside of Smurfs.
   // You'll need to make sure you have the right properties on state and pass them down to props.
