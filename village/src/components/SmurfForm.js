@@ -48,7 +48,16 @@ const StylesSmurfForm = styled.div`
       border-radius: 20px;
       padding: 8px 0;
       font-size: 1.1rem;
+      font-weight: bold;
       outline: none;
+      cursor: pointer;
+      transition: all .2s ease-in-out;
+
+      &:hover {
+        background-color: #1F85C7;
+        transform: translateY(-5px);
+        color: #fff;
+      }
     }
 
 
