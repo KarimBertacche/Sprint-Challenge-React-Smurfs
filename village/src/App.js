@@ -34,14 +34,46 @@ class App extends Component {
         this.setState({ errorMessage: reject.message })
       })
   } 
+
+  getRequestHandler = () => {
+    axios.get(smurfsAPI)
+      .then(response => {
+        this.setState({ smurfs: response.data })
+      })
+      .catch(reject => {
+        this.setState({ errorMessage: reject.message })
+      })
+  } 
+
+  postRequestHandler = (Url, newSmurf) => {
+    axios.post(Url, newSmurf)
+      .then(response => {
+        this.setState({ smurfs: response.data })
+      })
+  }
+
+  deleteRequestHandler = (id) => {
+    axios.delete(`${smurfsAPI}/${id}`)
+      .then(response => {
+        this.setState({ smurfs: response.data })
+      })
+  }
   // add any needed code to ensure that the smurfs collection exists on state and it has data coming from the server
   // Notice what your map function is looping over and returning inside of Smurfs.
   // You'll need to make sure you have the right properties on state and pass them down to props.
   render() {
     return (
       <div className="App">
-        <SmurfForm />
-        <Smurfs smurfs={this.state.smurfs} />
+        <SmurfForm 
+          smurfsAPI={smurfsAPI} 
+          btnText={this.state.btnText}
+          postRequestHandler={this.postRequestHandler} 
+          id={this.state.smurfs} 
+        />
+        <Smurfs 
+          smurfs={this.state.smurfs} 
+          deleteRequestHandler={this.deleteRequestHandler}
+        />
       </div>
     );
   }
