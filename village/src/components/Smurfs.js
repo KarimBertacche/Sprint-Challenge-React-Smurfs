@@ -6,7 +6,8 @@ import Smurf from './Smurf';
 
 const StylesVillage = styled.ul`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   border-top: 3px solid #1F85C7;
   border-left: 3px solid #1F85C7;
   margin-top: -100px;
@@ -14,6 +15,11 @@ const StylesVillage = styled.ul`
   height: 83.5vh;
   overflow: scroll;
   border-top-left-radius: 20px;
+
+  &::-webkit-scrollbar {
+    height: 0;
+    width: 0;
+  }
 `;
 
 export default function Smurfs(props) {

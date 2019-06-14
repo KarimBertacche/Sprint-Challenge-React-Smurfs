@@ -103,7 +103,7 @@ class SmurfForm extends Component {
             value={this.state.age}
             name="age"
             min="1"
-            max="100"
+            max="500"
           />
           <input
             type="number"
