@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { Route } from 'react-router-dom';
 
 import styled from 'styled-components';
 import Smurf from './Smurf';
@@ -20,15 +21,19 @@ export default function Smurfs(props) {
     <StylesVillage>
         {props.smurfs.map(smurf => {
           return (
-            <Smurf
-              name={smurf.name}
-              id={smurf.id}
-              age={smurf.age}
-              height={smurf.height}
-              img={smurf.img}
+            <Route 
               key={smurf.id}
-              deleteRequestHandler={props.deleteRequestHandler}
-              updateRequestHandler={props.updateRequestHandler}
+              path='/' 
+              render={() => <Smurf
+                              name={smurf.name}
+                              id={smurf.id}
+                              age={smurf.age}
+                              height={smurf.height}
+                              img={smurf.img}
+                              key={smurf.id}
+                              deleteRequestHandler={props.deleteRequestHandler}
+                              updateRequestHandler={props.updateRequestHandler}
+                            />}
             />
           );
         })}

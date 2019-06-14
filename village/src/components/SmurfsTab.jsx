@@ -31,7 +31,7 @@ export default function SmurfsTab(props) {
             {
               props.smurfs.map(smurf => {
                 return(
-                  <NavLink className="aside-links" to={`/${smurf.name}/${smurf.id}`}>{smurf.name}</NavLink>
+                  <NavLink key={smurf.id} className="aside-links" to={`/${smurf.id}`}>{smurf.name}</NavLink>
                 )
               })
             }

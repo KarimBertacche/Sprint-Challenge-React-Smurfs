@@ -30,7 +30,7 @@ const StylesNavBar = styled.nav`
 export default function NavBar() {
     return(
         <StylesNavBar>
-            <NavLink className="nav-links" exact to='/'>Smurfs</NavLink>
+            <NavLink className="nav-links" exact to="/">Smurfs</NavLink>
             <NavLink className="nav-links" to={`/SmurfForm`}>Add Smurf</NavLink>
         </StylesNavBar>
     )

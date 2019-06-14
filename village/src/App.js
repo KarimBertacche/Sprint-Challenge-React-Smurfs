@@ -101,7 +101,7 @@ class App extends Component {
       <StylesHeader>
         <header>
           <img src={Logo} alt="logo" />
-          <Route path="/" render={() => <NavBar/>} />
+          <NavBar/>
           <Route path="/SmurfForm"
             render={() => <SmurfForm 
             smurfsAPI={smurfsAPI} 
@@ -114,11 +114,11 @@ class App extends Component {
           <aside>
             <SmurfsTab smurfs={this.state.smurfs}/>
           </aside>
-          <Smurfs 
-            smurfs={this.state.smurfs} 
-            deleteRequestHandler={this.deleteRequestHandler}
-            updateRequestHandler={this.updateRequestHandler}
-          />
+            <Smurfs 
+              smurfs={this.state.smurfs} 
+              deleteRequestHandler={this.deleteRequestHandler}
+              updateRequestHandler={this.updateRequestHandler}
+            />      
         </section>
       </StylesHeader>
     );

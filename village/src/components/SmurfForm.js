@@ -48,6 +48,7 @@ const StylesSmurfForm = styled.div`
       border-radius: 20px;
       padding: 8px 0;
       font-size: 1.1rem;
+      outline: none;
     }
 
 
