@@ -12,6 +12,7 @@ const StylesSmurf = styled.div`
   width: 200px;
   height: 300px;
   margin-bottom: 20px;
+  transition: all .5s ease-in-out;
 
   section {
     position: absolute;
@@ -25,8 +26,9 @@ const StylesSmurf = styled.div`
     height: 130px;
     background-color: #1F85C7;
     border: 3px solid #1F85C7;
-    border-radius: 20px;
+    border-radius: 50px;
     color: #fff;
+    overflow: hidden;
 
     h3 {
       font-size: 1.4rem;
@@ -37,9 +39,28 @@ const StylesSmurf = styled.div`
     p {
       margin-top: 5px;
     }
-    
-  }
 
+    button {
+        width: 100px;
+        padding: 5px;
+        border-radius: 10px;
+        font-size: 1rem;
+        cursor: pointer;
+        transform: translateY(200%);
+        transition: all .5s ease-in-out;
+
+        &:hover {
+            background-color: dodgerblue;
+            color: #fff;
+        }
+    }
+
+    
+    }
+    
+    &:hover button {
+        transform: translateY(0);
+    }
 `;
 
 export default function SmurfCard(props) {

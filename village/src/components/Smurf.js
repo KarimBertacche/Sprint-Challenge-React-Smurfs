@@ -11,6 +11,7 @@ const Smurf = props => {
         render={() => <SmurfCard
                         name={props.name}
                         age={props.age}
+                        height={props.height}
                         id={props.id}
                         updateRequestHandler={props.updateRequestHandler}
                         deleteRequestHandler={props.deleteRequestHandler}
@@ -21,6 +22,7 @@ const Smurf = props => {
         render={() => <SmurfCard
                         name={props.name}
                         age={props.age}
+                        height={props.height}
                         id={props.id}
                         updateRequestHandler={props.updateRequestHandler}
                         deleteRequestHandler={props.deleteRequestHandler}
