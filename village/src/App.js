@@ -5,6 +5,8 @@ import './App.css';
 import SmurfForm from './components/SmurfForm';
 import Smurfs from './components/Smurfs';
 
+const smurfsAPI = 'http://localhost:3333/smurfs'
+
 class App extends Component {
   constructor(props) {
     super(props);
