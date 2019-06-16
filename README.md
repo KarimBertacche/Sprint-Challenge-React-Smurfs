@@ -29,8 +29,14 @@ In this challenge, you will create a Single Page Application complete with Clien
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
 - [ ] Explain the differences between `client-side routing` and `server-side routing`.
+'server-side routing' happens when there is a http request sent to the server everytime the page needs to re-render some information/data, in this way the first load is much faster as it only needs to get from the server the initial page, however subsequent request for renders will be slower compared to 'client-side routing' or single page application which only make a single request to the server for all necesssary data the first time around and stores it on the browser for quicker routing between pages, this procedure makes the initial load slower as it is requesting most of the data, after that it only makes request to the API in the form of AJAX if it needs some newer data which was not bundled within the first load, this latter approach makes for very fast routing and loads within the application and better experience of the website after the initial load.
+
 - [ ] Which HTTP methods can be mapped to the CRUD acronym that we use when interfacing with APIs/Servers.
+C.R.U.D stands for Create Read Update Delete, this four are the most important ways of communicating exchanging information with an APi/Server, Create is when we use POST to pass data to a server, Read is the equivalent of GET to fetch data from an API, Update or Replace is when we use PUT to replace some existing data on the server with new data, for example when targeting an objects to replace some of the values, and Delete to remove from the server what is no longer needed. 
+
 - [ ] Mention three tools we can use to make AJAX requests.
+The three major libraries to make AJAX requests to an API are JQUERY AJAX, ASYNC AWAIT, and my favourite one AXIOS which is very similar to the native Vanilla JS fetch method, all three needs for their respective libraries to be installed and imported and their usage is rather similar with minor difference in syntax and what is the body returned from the request, JQEURY uses $.ajax(), ASYNC AWAIT -> const fetchDataHandler = async() { try { let response = await() } catch { .. }, whereas axios is the nicest syntax in my opinion with axios.get/post/put||delete(...).then(response => {}).catch(error => {}).
+
 
 
 ## Project Set Up
